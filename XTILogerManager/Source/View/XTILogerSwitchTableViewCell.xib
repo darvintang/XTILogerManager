@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="XTILogerSwitchTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyM-OX-3H7">
+                        <rect key="frame" x="0.0" y="43" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="OwB-nk-Fp1"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYx-7v-jvQ">
+                        <rect key="frame" x="16" y="12.5" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5b-4R-ALG">
+                        <rect key="frame" x="227.5" y="13.5" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HYc-yj-9Ad">
+                        <rect key="frame" x="267" y="6.5" width="51" height="31"/>
+                        <connections>
+                            <action selector="clickSwitchView:" destination="KGk-i7-Jjw" eventType="valueChanged" id="va6-Np-8VW"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XYx-7v-jvQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="5Nf-GH-DV6"/>
+                    <constraint firstItem="G5b-4R-ALG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Dyu-pG-hOf"/>
+                    <constraint firstItem="HYc-yj-9Ad" firstAttribute="leading" secondItem="G5b-4R-ALG" secondAttribute="trailing" constant="4" id="Eo6-SQ-GBh"/>
+                    <constraint firstAttribute="trailing" secondItem="jyM-OX-3H7" secondAttribute="trailing" id="LUk-YT-i0N"/>
+                    <constraint firstItem="XYx-7v-jvQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SCF-NI-EKh"/>
+                    <constraint firstItem="jyM-OX-3H7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="U1m-Kq-KN1"/>
+                    <constraint firstAttribute="trailing" secondItem="HYc-yj-9Ad" secondAttribute="trailing" constant="4" id="Yr3-y2-YQ5"/>
+                    <constraint firstItem="HYc-yj-9Ad" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iyn-AM-RuL"/>
+                    <constraint firstAttribute="bottom" secondItem="jyM-OX-3H7" secondAttribute="bottom" id="pXv-HQ-g9g"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="G5b-4R-ALG" id="F9Y-KZ-r4b"/>
+                <outlet property="switchView" destination="HYc-yj-9Ad" id="Hwy-nQ-Sbf"/>
+                <outlet property="titleLable" destination="XYx-7v-jvQ" id="7zD-WE-Li2"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

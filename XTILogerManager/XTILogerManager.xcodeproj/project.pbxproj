@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB46F0E1E313D35E00CECFA3 /* Pods_XTILogerManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B01CF8BA37DFE5FE313E16 /* Pods_XTILogerManager.framework */; };
+		AE436B0920D5FF95003FAE69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B0820D5FF95003FAE69 /* AppDelegate.m */; };
+		AE436B0C20D5FF95003FAE69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B0B20D5FF95003FAE69 /* ViewController.m */; };
+		AE436B0F20D5FF95003FAE69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE436B0D20D5FF95003FAE69 /* Main.storyboard */; };
+		AE436B1120D5FF96003FAE69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE436B1020D5FF96003FAE69 /* Assets.xcassets */; };
+		AE436B1420D5FF96003FAE69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE436B1220D5FF96003FAE69 /* LaunchScreen.storyboard */; };
+		AE436B1720D5FF96003FAE69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B1620D5FF96003FAE69 /* main.m */; };
+		AE436B2320D60240003FAE69 /* XTILogerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B2220D60240003FAE69 /* XTILogerManager.m */; };
+		AE436B2620D60270003FAE69 /* XTILoger.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B2520D60270003FAE69 /* XTILoger.m */; };
+		AE436B2920D63681003FAE69 /* XTILogerManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B2820D63681003FAE69 /* XTILogerManagerViewController.m */; };
+		AE436B2E20D6414B003FAE69 /* XTILogerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B2C20D6414B003FAE69 /* XTILogerTableViewCell.m */; };
+		AE436B2F20D6414B003FAE69 /* XTILogerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B2D20D6414B003FAE69 /* XTILogerTableViewCell.xib */; };
+		AE436B3320D650EF003FAE69 /* XTILogerSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B3120D650EF003FAE69 /* XTILogerSwitchTableViewCell.m */; };
+		AE436B3420D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B3220D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib */; };
+		AE436B3820D6511D003FAE69 /* XTILogerSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B3620D6511D003FAE69 /* XTILogerSwitchViewController.m */; };
+		AE436B3920D6511D003FAE69 /* XTILogerSwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B3720D6511D003FAE69 /* XTILogerSwitchViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		187B4FA16C72FD617E2F0E89 /* Pods-XTILogerManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTILogerManager.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-XTILogerManager/Pods-XTILogerManager.debug.xcconfig"; sourceTree = "<group>"; };
+		19E31136821DC22ABCCDEB3E /* Pods-XTILogerManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTILogerManager.release.xcconfig"; path = "../Pods/Target Support Files/Pods-XTILogerManager/Pods-XTILogerManager.release.xcconfig"; sourceTree = "<group>"; };
+		61B01CF8BA37DFE5FE313E16 /* Pods_XTILogerManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTILogerManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE436B0420D5FF95003FAE69 /* XTILogerManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTILogerManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE436B0720D5FF95003FAE69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AE436B0820D5FF95003FAE69 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AE436B0A20D5FF95003FAE69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AE436B0B20D5FF95003FAE69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AE436B0E20D5FF95003FAE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE436B1020D5FF96003FAE69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE436B1320D5FF96003FAE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE436B1520D5FF96003FAE69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE436B1620D5FF96003FAE69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE436B2120D60240003FAE69 /* XTILogerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerManager.h; sourceTree = "<group>"; };
+		AE436B2220D60240003FAE69 /* XTILogerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerManager.m; sourceTree = "<group>"; };
+		AE436B2420D60270003FAE69 /* XTILoger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILoger.h; sourceTree = "<group>"; };
+		AE436B2520D60270003FAE69 /* XTILoger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILoger.m; sourceTree = "<group>"; };
+		AE436B2720D63681003FAE69 /* XTILogerManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerManagerViewController.h; sourceTree = "<group>"; };
+		AE436B2820D63681003FAE69 /* XTILogerManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerManagerViewController.m; sourceTree = "<group>"; };
+		AE436B2B20D6414B003FAE69 /* XTILogerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerTableViewCell.h; sourceTree = "<group>"; };
+		AE436B2C20D6414B003FAE69 /* XTILogerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerTableViewCell.m; sourceTree = "<group>"; };
+		AE436B2D20D6414B003FAE69 /* XTILogerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTILogerTableViewCell.xib; sourceTree = "<group>"; };
+		AE436B3020D650EF003FAE69 /* XTILogerSwitchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerSwitchTableViewCell.h; sourceTree = "<group>"; };
+		AE436B3120D650EF003FAE69 /* XTILogerSwitchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerSwitchTableViewCell.m; sourceTree = "<group>"; };
+		AE436B3220D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTILogerSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		AE436B3520D6511D003FAE69 /* XTILogerSwitchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerSwitchViewController.h; sourceTree = "<group>"; };
+		AE436B3620D6511D003FAE69 /* XTILogerSwitchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerSwitchViewController.m; sourceTree = "<group>"; };
+		AE436B3720D6511D003FAE69 /* XTILogerSwitchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTILogerSwitchViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE436B0120D5FF95003FAE69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB46F0E1E313D35E00CECFA3 /* Pods_XTILogerManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19A4EB54BEBB024B8C7E9152 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61B01CF8BA37DFE5FE313E16 /* Pods_XTILogerManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BE29A5081301EF1CD435CEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				187B4FA16C72FD617E2F0E89 /* Pods-XTILogerManager.debug.xcconfig */,
+				19E31136821DC22ABCCDEB3E /* Pods-XTILogerManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE436AFB20D5FF95003FAE69 = {
+			isa = PBXGroup;
+			children = (
+				AE436B1D20D5FFA7003FAE69 /* Source */,
+				AE436B0620D5FF95003FAE69 /* XTILogerManager */,
+				AE436B0520D5FF95003FAE69 /* Products */,
+				8BE29A5081301EF1CD435CEE /* Pods */,
+				19A4EB54BEBB024B8C7E9152 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AE436B0520D5FF95003FAE69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE436B0420D5FF95003FAE69 /* XTILogerManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE436B0620D5FF95003FAE69 /* XTILogerManager */ = {
+			isa = PBXGroup;
+			children = (
+				AE436B0720D5FF95003FAE69 /* AppDelegate.h */,
+				AE436B0820D5FF95003FAE69 /* AppDelegate.m */,
+				AE436B0A20D5FF95003FAE69 /* ViewController.h */,
+				AE436B0B20D5FF95003FAE69 /* ViewController.m */,
+				AE436B0D20D5FF95003FAE69 /* Main.storyboard */,
+				AE436B1020D5FF96003FAE69 /* Assets.xcassets */,
+				AE436B1220D5FF96003FAE69 /* LaunchScreen.storyboard */,
+				AE436B1520D5FF96003FAE69 /* Info.plist */,
+				AE436B1620D5FF96003FAE69 /* main.m */,
+			);
+			path = XTILogerManager;
+			sourceTree = "<group>";
+		};
+		AE436B1D20D5FFA7003FAE69 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AE436B1E20D60106003FAE69 /* Controller */,
+				AE436B2A20D63731003FAE69 /* View */,
+				AE436B2020D6021A003FAE69 /* XTILoger */,
+				AE436B2120D60240003FAE69 /* XTILogerManager.h */,
+				AE436B2220D60240003FAE69 /* XTILogerManager.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		AE436B1E20D60106003FAE69 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE436B2720D63681003FAE69 /* XTILogerManagerViewController.h */,
+				AE436B2820D63681003FAE69 /* XTILogerManagerViewController.m */,
+				AE436B3520D6511D003FAE69 /* XTILogerSwitchViewController.h */,
+				AE436B3620D6511D003FAE69 /* XTILogerSwitchViewController.m */,
+				AE436B3720D6511D003FAE69 /* XTILogerSwitchViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AE436B2020D6021A003FAE69 /* XTILoger */ = {
+			isa = PBXGroup;
+			children = (
+				AE436B2420D60270003FAE69 /* XTILoger.h */,
+				AE436B2520D60270003FAE69 /* XTILoger.m */,
+			);
+			path = XTILoger;
+			sourceTree = "<group>";
+		};
+		AE436B2A20D63731003FAE69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE436B2B20D6414B003FAE69 /* XTILogerTableViewCell.h */,
+				AE436B2C20D6414B003FAE69 /* XTILogerTableViewCell.m */,
+				AE436B2D20D6414B003FAE69 /* XTILogerTableViewCell.xib */,
+				AE436B3020D650EF003FAE69 /* XTILogerSwitchTableViewCell.h */,
+				AE436B3120D650EF003FAE69 /* XTILogerSwitchTableViewCell.m */,
+				AE436B3220D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE436B0320D5FF95003FAE69 /* XTILogerManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE436B1A20D5FF96003FAE69 /* Build configuration list for PBXNativeTarget "XTILogerManager" */;
+			buildPhases = (
+				82B631EF3B998A7F00494D8D /* [CP] Check Pods Manifest.lock */,
+				AE436B0020D5FF95003FAE69 /* Sources */,
+				AE436B0120D5FF95003FAE69 /* Frameworks */,
+				AE436B0220D5FF95003FAE69 /* Resources */,
+				2746D6B5414676A70CDDFD37 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XTILogerManager;
+			productName = XTILogerManager;
+			productReference = AE436B0420D5FF95003FAE69 /* XTILogerManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE436AFC20D5FF95003FAE69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = input;
+				TargetAttributes = {
+					AE436B0320D5FF95003FAE69 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = AE436AFF20D5FF95003FAE69 /* Build configuration list for PBXProject "XTILogerManager" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE436AFB20D5FF95003FAE69;
+			productRefGroup = AE436B0520D5FF95003FAE69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE436B0320D5FF95003FAE69 /* XTILogerManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE436B0220D5FF95003FAE69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE436B3420D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib in Resources */,
+				AE436B1420D5FF96003FAE69 /* LaunchScreen.storyboard in Resources */,
+				AE436B1120D5FF96003FAE69 /* Assets.xcassets in Resources */,
+				AE436B0F20D5FF95003FAE69 /* Main.storyboard in Resources */,
+				AE436B3920D6511D003FAE69 /* XTILogerSwitchViewController.xib in Resources */,
+				AE436B2F20D6414B003FAE69 /* XTILogerTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2746D6B5414676A70CDDFD37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-XTILogerManager/Pods-XTILogerManager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-XTILogerManager/Pods-XTILogerManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82B631EF3B998A7F00494D8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XTILogerManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE436B0020D5FF95003FAE69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE436B2920D63681003FAE69 /* XTILogerManagerViewController.m in Sources */,
+				AE436B0C20D5FF95003FAE69 /* ViewController.m in Sources */,
+				AE436B2620D60270003FAE69 /* XTILoger.m in Sources */,
+				AE436B3320D650EF003FAE69 /* XTILogerSwitchTableViewCell.m in Sources */,
+				AE436B2320D60240003FAE69 /* XTILogerManager.m in Sources */,
+				AE436B1720D5FF96003FAE69 /* main.m in Sources */,
+				AE436B0920D5FF95003FAE69 /* AppDelegate.m in Sources */,
+				AE436B2E20D6414B003FAE69 /* XTILogerTableViewCell.m in Sources */,
+				AE436B3820D6511D003FAE69 /* XTILogerSwitchViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AE436B0D20D5FF95003FAE69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE436B0E20D5FF95003FAE69 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AE436B1220D5FF96003FAE69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE436B1320D5FF96003FAE69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE436B1820D5FF96003FAE69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AE436B1920D5FF96003FAE69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE436B1B20D5FF96003FAE69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 187B4FA16C72FD617E2F0E89 /* Pods-XTILogerManager.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZZ2Q79GEK8;
+				INFOPLIST_FILE = XTILogerManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.07coding.XTILogerManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE436B1C20D5FF96003FAE69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19E31136821DC22ABCCDEB3E /* Pods-XTILogerManager.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZZ2Q79GEK8;
+				INFOPLIST_FILE = XTILogerManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.07coding.XTILogerManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE436AFF20D5FF95003FAE69 /* Build configuration list for PBXProject "XTILogerManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE436B1820D5FF96003FAE69 /* Debug */,
+				AE436B1920D5FF96003FAE69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE436B1A20D5FF96003FAE69 /* Build configuration list for PBXNativeTarget "XTILogerManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE436B1B20D5FF96003FAE69 /* Debug */,
+				AE436B1C20D5FF96003FAE69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE436AFC20D5FF95003FAE69 /* Project object */;
+}
