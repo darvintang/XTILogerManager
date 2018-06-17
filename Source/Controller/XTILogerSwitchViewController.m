@@ -1,4 +1,5 @@
 
+
 //
 //  XTILogerSwitchViewController.m
 //  XTILogerManager
@@ -93,6 +94,8 @@
     return cell;
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.view == touches.allObjects.firstObject.view) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 @end

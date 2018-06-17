@@ -14,15 +14,15 @@
 		AE436B1120D5FF96003FAE69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE436B1020D5FF96003FAE69 /* Assets.xcassets */; };
 		AE436B1420D5FF96003FAE69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE436B1220D5FF96003FAE69 /* LaunchScreen.storyboard */; };
 		AE436B1720D5FF96003FAE69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B1620D5FF96003FAE69 /* main.m */; };
-		AE436B2320D60240003FAE69 /* XTILogerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B2220D60240003FAE69 /* XTILogerManager.m */; };
-		AE436B2620D60270003FAE69 /* XTILoger.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B2520D60270003FAE69 /* XTILoger.m */; };
-		AE436B2920D63681003FAE69 /* XTILogerManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B2820D63681003FAE69 /* XTILogerManagerViewController.m */; };
-		AE436B2E20D6414B003FAE69 /* XTILogerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B2C20D6414B003FAE69 /* XTILogerTableViewCell.m */; };
-		AE436B2F20D6414B003FAE69 /* XTILogerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B2D20D6414B003FAE69 /* XTILogerTableViewCell.xib */; };
-		AE436B3320D650EF003FAE69 /* XTILogerSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B3120D650EF003FAE69 /* XTILogerSwitchTableViewCell.m */; };
-		AE436B3420D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B3220D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib */; };
-		AE436B3820D6511D003FAE69 /* XTILogerSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B3620D6511D003FAE69 /* XTILogerSwitchViewController.m */; };
-		AE436B3920D6511D003FAE69 /* XTILogerSwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B3720D6511D003FAE69 /* XTILogerSwitchViewController.xib */; };
+		AE436B4D20D66FD8003FAE69 /* XTILogerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B3B20D66FD8003FAE69 /* XTILogerManager.m */; };
+		AE436B4E20D66FD8003FAE69 /* XTILoger.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B3D20D66FD8003FAE69 /* XTILoger.m */; };
+		AE436B4F20D66FD8003FAE69 /* XTILogerManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B4020D66FD8003FAE69 /* XTILogerManagerViewController.m */; };
+		AE436B5020D66FD8003FAE69 /* XTILogerSwitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B4220D66FD8003FAE69 /* XTILogerSwitchViewController.xib */; };
+		AE436B5120D66FD8003FAE69 /* XTILogerSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B4320D66FD8003FAE69 /* XTILogerSwitchViewController.m */; };
+		AE436B5220D66FD8003FAE69 /* XTILogerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B4720D66FD8003FAE69 /* XTILogerTableViewCell.m */; };
+		AE436B5320D66FD8003FAE69 /* XTILogerSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE436B4820D66FD8003FAE69 /* XTILogerSwitchTableViewCell.m */; };
+		AE436B5420D66FD8003FAE69 /* XTILogerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B4A20D66FD8003FAE69 /* XTILogerTableViewCell.xib */; };
+		AE436B5520D66FD8003FAE69 /* XTILogerSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE436B4C20D66FD8003FAE69 /* XTILogerSwitchTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,21 +39,21 @@
 		AE436B1320D5FF96003FAE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE436B1520D5FF96003FAE69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE436B1620D5FF96003FAE69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AE436B2120D60240003FAE69 /* XTILogerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerManager.h; sourceTree = "<group>"; };
-		AE436B2220D60240003FAE69 /* XTILogerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerManager.m; sourceTree = "<group>"; };
-		AE436B2420D60270003FAE69 /* XTILoger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILoger.h; sourceTree = "<group>"; };
-		AE436B2520D60270003FAE69 /* XTILoger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILoger.m; sourceTree = "<group>"; };
-		AE436B2720D63681003FAE69 /* XTILogerManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerManagerViewController.h; sourceTree = "<group>"; };
-		AE436B2820D63681003FAE69 /* XTILogerManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerManagerViewController.m; sourceTree = "<group>"; };
-		AE436B2B20D6414B003FAE69 /* XTILogerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerTableViewCell.h; sourceTree = "<group>"; };
-		AE436B2C20D6414B003FAE69 /* XTILogerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerTableViewCell.m; sourceTree = "<group>"; };
-		AE436B2D20D6414B003FAE69 /* XTILogerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTILogerTableViewCell.xib; sourceTree = "<group>"; };
-		AE436B3020D650EF003FAE69 /* XTILogerSwitchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerSwitchTableViewCell.h; sourceTree = "<group>"; };
-		AE436B3120D650EF003FAE69 /* XTILogerSwitchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerSwitchTableViewCell.m; sourceTree = "<group>"; };
-		AE436B3220D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTILogerSwitchTableViewCell.xib; sourceTree = "<group>"; };
-		AE436B3520D6511D003FAE69 /* XTILogerSwitchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTILogerSwitchViewController.h; sourceTree = "<group>"; };
-		AE436B3620D6511D003FAE69 /* XTILogerSwitchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTILogerSwitchViewController.m; sourceTree = "<group>"; };
-		AE436B3720D6511D003FAE69 /* XTILogerSwitchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTILogerSwitchViewController.xib; sourceTree = "<group>"; };
+		AE436B3B20D66FD8003FAE69 /* XTILogerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTILogerManager.m; sourceTree = "<group>"; };
+		AE436B3D20D66FD8003FAE69 /* XTILoger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTILoger.m; sourceTree = "<group>"; };
+		AE436B3E20D66FD8003FAE69 /* XTILoger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTILoger.h; sourceTree = "<group>"; };
+		AE436B4020D66FD8003FAE69 /* XTILogerManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTILogerManagerViewController.m; sourceTree = "<group>"; };
+		AE436B4120D66FD8003FAE69 /* XTILogerSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTILogerSwitchViewController.h; sourceTree = "<group>"; };
+		AE436B4220D66FD8003FAE69 /* XTILogerSwitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTILogerSwitchViewController.xib; sourceTree = "<group>"; };
+		AE436B4320D66FD8003FAE69 /* XTILogerSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTILogerSwitchViewController.m; sourceTree = "<group>"; };
+		AE436B4420D66FD8003FAE69 /* XTILogerManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTILogerManagerViewController.h; sourceTree = "<group>"; };
+		AE436B4520D66FD8003FAE69 /* XTILogerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTILogerManager.h; sourceTree = "<group>"; };
+		AE436B4720D66FD8003FAE69 /* XTILogerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTILogerTableViewCell.m; sourceTree = "<group>"; };
+		AE436B4820D66FD8003FAE69 /* XTILogerSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTILogerSwitchTableViewCell.m; sourceTree = "<group>"; };
+		AE436B4920D66FD8003FAE69 /* XTILogerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTILogerTableViewCell.h; sourceTree = "<group>"; };
+		AE436B4A20D66FD8003FAE69 /* XTILogerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTILogerTableViewCell.xib; sourceTree = "<group>"; };
+		AE436B4B20D66FD8003FAE69 /* XTILogerSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTILogerSwitchTableViewCell.h; sourceTree = "<group>"; };
+		AE436B4C20D66FD8003FAE69 /* XTILogerSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTILogerSwitchTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 		AE436AFB20D5FF95003FAE69 = {
 			isa = PBXGroup;
 			children = (
-				AE436B1D20D5FFA7003FAE69 /* Source */,
+				AE436B3A20D66FD8003FAE69 /* Source */,
 				AE436B0620D5FF95003FAE69 /* XTILogerManager */,
 				AE436B0520D5FF95003FAE69 /* Products */,
 				8BE29A5081301EF1CD435CEE /* Pods */,
@@ -120,48 +120,49 @@
 			path = XTILogerManager;
 			sourceTree = "<group>";
 		};
-		AE436B1D20D5FFA7003FAE69 /* Source */ = {
+		AE436B3A20D66FD8003FAE69 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				AE436B1E20D60106003FAE69 /* Controller */,
-				AE436B2A20D63731003FAE69 /* View */,
-				AE436B2020D6021A003FAE69 /* XTILoger */,
-				AE436B2120D60240003FAE69 /* XTILogerManager.h */,
-				AE436B2220D60240003FAE69 /* XTILogerManager.m */,
+				AE436B3F20D66FD8003FAE69 /* Controller */,
+				AE436B4620D66FD8003FAE69 /* View */,
+				AE436B3C20D66FD8003FAE69 /* XTILoger */,
+				AE436B4520D66FD8003FAE69 /* XTILogerManager.h */,
+				AE436B3B20D66FD8003FAE69 /* XTILogerManager.m */,
 			);
-			path = Source;
+			name = Source;
+			path = ../Source;
 			sourceTree = "<group>";
 		};
-		AE436B1E20D60106003FAE69 /* Controller */ = {
+		AE436B3C20D66FD8003FAE69 /* XTILoger */ = {
 			isa = PBXGroup;
 			children = (
-				AE436B2720D63681003FAE69 /* XTILogerManagerViewController.h */,
-				AE436B2820D63681003FAE69 /* XTILogerManagerViewController.m */,
-				AE436B3520D6511D003FAE69 /* XTILogerSwitchViewController.h */,
-				AE436B3620D6511D003FAE69 /* XTILogerSwitchViewController.m */,
-				AE436B3720D6511D003FAE69 /* XTILogerSwitchViewController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		AE436B2020D6021A003FAE69 /* XTILoger */ = {
-			isa = PBXGroup;
-			children = (
-				AE436B2420D60270003FAE69 /* XTILoger.h */,
-				AE436B2520D60270003FAE69 /* XTILoger.m */,
+				AE436B3E20D66FD8003FAE69 /* XTILoger.h */,
+				AE436B3D20D66FD8003FAE69 /* XTILoger.m */,
 			);
 			path = XTILoger;
 			sourceTree = "<group>";
 		};
-		AE436B2A20D63731003FAE69 /* View */ = {
+		AE436B3F20D66FD8003FAE69 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AE436B2B20D6414B003FAE69 /* XTILogerTableViewCell.h */,
-				AE436B2C20D6414B003FAE69 /* XTILogerTableViewCell.m */,
-				AE436B2D20D6414B003FAE69 /* XTILogerTableViewCell.xib */,
-				AE436B3020D650EF003FAE69 /* XTILogerSwitchTableViewCell.h */,
-				AE436B3120D650EF003FAE69 /* XTILogerSwitchTableViewCell.m */,
-				AE436B3220D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib */,
+				AE436B4420D66FD8003FAE69 /* XTILogerManagerViewController.h */,
+				AE436B4020D66FD8003FAE69 /* XTILogerManagerViewController.m */,
+				AE436B4120D66FD8003FAE69 /* XTILogerSwitchViewController.h */,
+				AE436B4320D66FD8003FAE69 /* XTILogerSwitchViewController.m */,
+				AE436B4220D66FD8003FAE69 /* XTILogerSwitchViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AE436B4620D66FD8003FAE69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE436B4B20D66FD8003FAE69 /* XTILogerSwitchTableViewCell.h */,
+				AE436B4820D66FD8003FAE69 /* XTILogerSwitchTableViewCell.m */,
+				AE436B4C20D66FD8003FAE69 /* XTILogerSwitchTableViewCell.xib */,
+				AE436B4920D66FD8003FAE69 /* XTILogerTableViewCell.h */,
+				AE436B4720D66FD8003FAE69 /* XTILogerTableViewCell.m */,
+				AE436B4A20D66FD8003FAE69 /* XTILogerTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,12 +226,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE436B3420D650EF003FAE69 /* XTILogerSwitchTableViewCell.xib in Resources */,
+				AE436B5020D66FD8003FAE69 /* XTILogerSwitchViewController.xib in Resources */,
 				AE436B1420D5FF96003FAE69 /* LaunchScreen.storyboard in Resources */,
 				AE436B1120D5FF96003FAE69 /* Assets.xcassets in Resources */,
+				AE436B5520D66FD8003FAE69 /* XTILogerSwitchTableViewCell.xib in Resources */,
+				AE436B5420D66FD8003FAE69 /* XTILogerTableViewCell.xib in Resources */,
 				AE436B0F20D5FF95003FAE69 /* Main.storyboard in Resources */,
-				AE436B3920D6511D003FAE69 /* XTILogerSwitchViewController.xib in Resources */,
-				AE436B2F20D6414B003FAE69 /* XTILogerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,15 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE436B2920D63681003FAE69 /* XTILogerManagerViewController.m in Sources */,
+				AE436B4F20D66FD8003FAE69 /* XTILogerManagerViewController.m in Sources */,
+				AE436B5320D66FD8003FAE69 /* XTILogerSwitchTableViewCell.m in Sources */,
+				AE436B5120D66FD8003FAE69 /* XTILogerSwitchViewController.m in Sources */,
 				AE436B0C20D5FF95003FAE69 /* ViewController.m in Sources */,
-				AE436B2620D60270003FAE69 /* XTILoger.m in Sources */,
-				AE436B3320D650EF003FAE69 /* XTILogerSwitchTableViewCell.m in Sources */,
-				AE436B2320D60240003FAE69 /* XTILogerManager.m in Sources */,
+				AE436B5220D66FD8003FAE69 /* XTILogerTableViewCell.m in Sources */,
+				AE436B4E20D66FD8003FAE69 /* XTILoger.m in Sources */,
+				AE436B4D20D66FD8003FAE69 /* XTILogerManager.m in Sources */,
 				AE436B1720D5FF96003FAE69 /* main.m in Sources */,
 				AE436B0920D5FF95003FAE69 /* AppDelegate.m in Sources */,
-				AE436B2E20D6414B003FAE69 /* XTILogerTableViewCell.m in Sources */,
-				AE436B3820D6511D003FAE69 /* XTILogerSwitchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +434,10 @@
 				DEVELOPMENT_TEAM = ZZ2Q79GEK8;
 				INFOPLIST_FILE = XTILogerManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.07coding.XTILogerManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -449,7 +453,10 @@
 				DEVELOPMENT_TEAM = ZZ2Q79GEK8;
 				INFOPLIST_FILE = XTILogerManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.07coding.XTILogerManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
