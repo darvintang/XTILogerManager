@@ -10,6 +10,14 @@
 
 #define LogerFileMaxLength 1048576 //日志文件最大长度，1M
 
+#define XTILogerManagerFormat(format) [NSString stringWithFormat:@"%@:%@ > %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], [NSNumber numberWithInt:__LINE__], format]
+
+#define XTILoger_Debug(format, ...) [[XTILoger sharedInstance] logDebugWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
+#define XTILoger_Info(format, ...) [[XTILoger sharedInstance] logInfoWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
+#define XTILoger_Warning(format, ...) [[XTILoger sharedInstance] logWarningWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
+#define XTILoger_Error(format, ...) [[XTILoger sharedInstance] logErrorWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
+#define XTILoger_Crash(format, ...) [[XTILoger sharedInstance] logCrashWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
+
 /**
  日志等级
 
@@ -43,12 +51,23 @@ typedef NS_ENUM(NSInteger, XTILogerLevel) {
 - (void)logWarningWithFormat:(NSString *)format, ...;
 - (void)logErrorWithFormat:(NSString *)format, ...;
 - (void)logCrashWithFormat:(NSString *)format, ...;
-
+//删除日志文件
 - (BOOL)removeLogerFileWith:(XTILogerLevel)level;
+/**
+ 获取日志文件，需要
+ */
 - (NSArray<NSString *> *)getLogerFilePathsWith:(XTILogerLevel)level;
+/**
+ 获取这日志等级的名字
+ */
 - (NSString *)getXTILogerLevelNameWith:(XTILogerLevel)level;
+/**
+ 获取日志等级
+ */
 - (XTILogerLevel)getXTILogerLevelWith:(NSString *)name;
+
 - (NSString *)getFileLengthWith:(XTILogerLevel)level;
 - (NSString *)getFileLengthWithName:(NSString *)name;
+
 - (NSString *)getSaveLevel;
 @end

@@ -10,14 +10,6 @@
 #import <SSZipArchive/SSZipArchive.h>
 #import "XTILoger.h"
 
-#define XTILogerManagerFormat(format) [NSString stringWithFormat:@"%@:%@ > %@",[[NSString stringWithUTF8String:__FILE__] lastPathComponent],[NSNumber numberWithInt:__LINE__], format]
-
-#define XTILoger_Debug(format, ...)  [[XTILoger sharedInstance] logDebugWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-#define XTILoger_Info(format, ...)  [[XTILoger sharedInstance] logInfoWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-#define XTILoger_Warning(format, ...)  [[XTILoger sharedInstance] logWarningWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-#define XTILoger_Error(format, ...)  [[XTILoger sharedInstance] logErrorWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-#define XTILoger_Crash(format, ...)  [[XTILoger sharedInstance] logCrashWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-
 /**
  日志管理类，包括设置输出日志等级、分享日志文件。同一级别的日志文件只保存两个
  */

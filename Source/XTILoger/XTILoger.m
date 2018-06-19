@@ -147,7 +147,7 @@
     if (!_saveLevel) {
         NSString *flag = [[NSUserDefaults standardUserDefaults] stringForKey:@"XTILogerManager.saveLevel"];
         _saveLevel = [self getXTILogerLevelWith:flag];
-        if (_saveLevel == XTILogerLevelAll){
+        if (_saveLevel == XTILogerLevelAll) {
             _saveLevel = XTILogerLevelError;
         }
     }
