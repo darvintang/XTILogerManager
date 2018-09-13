@@ -81,8 +81,9 @@
 
 #if DEBUG
     if (level >= self.printLevel) {
-        dispatch_async(self.logQueue, ^{
-            NSLog(@"[%@] %@", [self getXTILogerLevelNameWith:level], content);
+        dispatch_async( self.logQueue, ^{
+//            NSString *ID =[NSString stringWithFormat:@"%@",[NSThread currentThread]];
+            NSLog(@"[%@] [%@] %@", [NSThread currentThread], [self getXTILogerLevelNameWith:level], content);
         });
     }
 #endif

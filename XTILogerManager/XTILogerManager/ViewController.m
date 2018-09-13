@@ -40,11 +40,13 @@
 //    activityViewController.excludedActivityTypes = excludedActivities;
     
 //    [self presentViewController:activityViewController animated:YES completion:nil];
-    XTILoger_Debug(@"%@__%@",@"日志测试",self);
-    XTILoger_Info(@"%@__%@",@"日志测试",self);
-    XTILoger_Warning(@"%@__%@",@"日志测试",self);
-    XTILoger_Error(@"%@__%@",@"日志测试",self);
-    XTILoger_Crash(@"%@__%@",@"日志测试",self);
+    for (int i = 0; i<10000; i++) {
+        XTILoger_Debug(@"%@__%@",@"日志测试",self);
+//        XTILoger_Info(@"%@__%@",@"日志测试",self);
+//        XTILoger_Warning(@"%@__%@",@"日志测试",self);
+//        XTILoger_Error(@"%@__%@",@"日志测试",self);
+//        XTILoger_Crash(@"%@__%@",@"日志测试",self);
+    }
     [[XTILogerManager sharedInstance] showManagerViewController:self extDict:nil];
 }
 
