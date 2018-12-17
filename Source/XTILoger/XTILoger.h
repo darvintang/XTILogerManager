@@ -1,7 +1,7 @@
 //
 //  XTILoger.h
 //  XTILogerManager
-//
+// 如果非cocoapods管理三方库，请在PREPROCESSOR_DEFINITIONS添加Debugm模式下DEBUG=1
 //  Created by Input on 2018/6/17.
 //  Copyright © 2018年 input. All rights reserved.
 //
@@ -12,11 +12,11 @@
 
 #define XTILogerManagerFormat(format) [NSString stringWithFormat:@"%@:%@ > %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], [NSNumber numberWithInt:__LINE__], format]
 
-#define XTILoger_Debug(format, ...) [[XTILoger sharedInstance] logDebugWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-#define XTILoger_Info(format, ...) [[XTILoger sharedInstance] logInfoWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-#define XTILoger_Warning(format, ...) [[XTILoger sharedInstance] logWarningWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-#define XTILoger_Error(format, ...) [[XTILoger sharedInstance] logErrorWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
-#define XTILoger_Crash(format, ...) [[XTILoger sharedInstance] logCrashWithFormat:XTILogerManagerFormat(format), ##__VA_ARGS__]
+#define XTILoger_Debug(format, ...)   [[XTILoger sharedInstance] logDebugWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Info(format, ...)    [[XTILoger sharedInstance] logInfoWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Warning(format, ...) [[XTILoger sharedInstance] logWarningWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Error(format, ...)   [[XTILoger sharedInstance] logErrorWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Crash(format, ...)   [[XTILoger sharedInstance] logCrashWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
 
 /**
  日志等级
@@ -29,7 +29,7 @@
  - XTILogerLevelCrash: 崩溃日志
  - XTILogerLevelOff: 关闭日志
  */
-typedef NS_ENUM(NSInteger, XTILogerLevel) {
+typedef NS_ENUM (NSInteger, XTILogerLevel) {
     XTILogerLevelAll,
     XTILogerLevelDebug,
     XTILogerLevelInfo,
@@ -58,7 +58,7 @@ typedef NS_ENUM(NSInteger, XTILogerLevel) {
  */
 - (NSArray<NSString *> *)getLogerFilePathsWith:(XTILogerLevel)level;
 /**
- 获取这日志等级的名字
+ 获取该日志等级的名字
  */
 - (NSString *)getXTILogerLevelNameWith:(XTILogerLevel)level;
 /**

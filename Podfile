@@ -9,4 +9,6 @@ target 'XTILogerManager' do
 
   # Pods for XTILogerManager
   pod 'SSZipArchive'
+  pod 'PolyvSocketAPI', '~> 0.5.0'
+
 end

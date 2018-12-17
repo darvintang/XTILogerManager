@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "XTILogerManager.h"
 
+#import <SocketIO/SocketIO-Swift.h>
+
 @interface ViewController ()
 
 @end
@@ -40,14 +42,19 @@
 //    activityViewController.excludedActivityTypes = excludedActivities;
     
 //    [self presentViewController:activityViewController animated:YES completion:nil];
-    for (int i = 0; i<10000; i++) {
-        XTILoger_Debug(@"%@__%@",@"日志测试",self);
+//    for (int i = 0; i<10000; i++) {
+//        XTILoger_Debug(@"%@__%@",@"日志测试",self);
 //        XTILoger_Info(@"%@__%@",@"日志测试",self);
 //        XTILoger_Warning(@"%@__%@",@"日志测试",self);
 //        XTILoger_Error(@"%@__%@",@"日志测试",self);
 //        XTILoger_Crash(@"%@__%@",@"日志测试",self);
-    }
-    [[XTILogerManager sharedInstance] showManagerViewController:self extDict:nil];
+//    }
+//    [[XTILogerManager sharedInstance] showManagerViewController:self extDict:nil];
+
+    SocketManager *manager = [[SocketManager alloc] initWithSocketURL:[NSURL URLWithString:@"ws://121.40.165.18:8080"] config:@{ @"log": @(YES), @"compress": @(YES) }];
+    XTILoger_Info(@"%@", manager);
+    XTILoger_Info(@"%@", manager.defaultSocket);
+    [manager connect];
 }
 
 @end

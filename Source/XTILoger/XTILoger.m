@@ -1,5 +1,4 @@
 
-
 //
 //  XTILoger.m
 //  XTILogerManager
@@ -78,12 +77,11 @@
     [self outLogerWith:level content:logContent];
 }
 - (void)outLogerWith:(XTILogerLevel)level content:(NSString *)content {
-
 #if DEBUG
     if (level >= self.printLevel) {
-        dispatch_async( self.logQueue, ^{
+        dispatch_async(self.logQueue, ^{
 //            NSString *ID =[NSString stringWithFormat:@"%@",[NSThread currentThread]];
-            NSLog(@"[%@] [%@] %@", [NSThread currentThread], [self getXTILogerLevelNameWith:level], content);
+            NSLog(@"[%@] %@", [self getXTILogerLevelNameWith:level], content);
         });
     }
 #endif
@@ -97,7 +95,6 @@
     NSString *formatInfo = [NSString stringWithFormat:@"[%@] %@\n", [formatter stringFromDate:now], content];
     //写文件操作
     dispatch_async(self.saveQueue, ^{
-
         NSString *logFileName = [self getLogerFilePathWith:level];
         // 如果文件不存在，创建文件
         if (![self.fileMgr fileExistsAtPath:logFileName]) {
@@ -124,18 +121,21 @@
         [fileHdr closeFile];
     });
 }
+
 - (dispatch_queue_t)saveQueue {
     if (!_saveQueue) {
         _saveQueue = dispatch_queue_create("com.XTILoger.save.queue", DISPATCH_QUEUE_SERIAL);
     }
     return _saveQueue;
 }
+
 - (dispatch_queue_t)logQueue {
     if (!_logQueue) {
         _logQueue = dispatch_queue_create("com.XTILoger.log.queue", DISPATCH_QUEUE_SERIAL);
     }
     return _logQueue;
 }
+
 #pragma mark - 打印日志的等级
 - (XTILogerLevel)printLevel {
     if (!_printLevel) {
@@ -163,9 +163,11 @@
     }];
     return YES;
 }
+
 - (NSString *)getFileLengthWithName:(NSString *)name {
     return [self getFileLengthWith:[self getXTILogerLevelWith:name]];
 }
+
 - (NSString *)getFileLengthWith:(XTILogerLevel)level {
     NSArray<NSString *> *logFileNames = [self getLogerFilePathsWith:level];
     __block unsigned long long fileSize = 0;
@@ -188,6 +190,7 @@
     }
     return [NSString stringWithFormat:@"%.2f%@", tempFileSize, lengthStr];
 }
+
 - (NSArray<NSString *> *)getLogerFilePathsWith:(XTILogerLevel)level {
     NSArray<NSString *> *filePaths = [self.fileMgr contentsOfDirectoryAtPath:self.logFolderPath error:nil];
     if (level != XTILogerLevelAll) {
@@ -201,6 +204,7 @@
     NSString *filePath = [NSString stringWithFormat:@"%@/%@.txt", self.logFolderPath, [self getXTILogerLevelNameWith:level]];
     return filePath;
 }
+
 - (NSString *)getSaveLevel {
     return [self getXTILogerLevelNameWith:self.saveLevel];
 }
@@ -226,6 +230,7 @@
     }
     return _fileMgr;
 }
+
 - (NSString *)getXTILogerLevelNameWith:(XTILogerLevel)level {
     NSString *levelName;
     switch (level) {
@@ -253,6 +258,7 @@
     }
     return levelName;
 }
+
 - (XTILogerLevel)getXTILogerLevelWith:(NSString *)name {
     XTILogerLevel level = XTILogerLevelOff;
     if ([name isEqualToString:@"off"]) {
@@ -265,11 +271,12 @@
         level = XTILogerLevelWarning;
     } else if ([name isEqualToString:@"error"]) {
         level = XTILogerLevelError;
-    }else if ([name isEqualToString:@"crash"]){
+    } else if ([name isEqualToString:@"crash"]) {
         level = XTILogerLevelCrash;
-    }else {
+    } else {
         level = XTILogerLevelAll;
     }
     return level;
 }
+
 @end
