@@ -42,6 +42,10 @@ typedef NS_ENUM (NSInteger, XTILogerLevel) {
 @interface XTILoger : NSObject
 
 @property (nonatomic, copy, readonly) NSString *logFolderPath;
+/**
+ 是否使用单前的队列打印日志，默认YES
+ */
+@property (nonatomic, assign) BOOL userCurrentQueue;
 
 + (instancetype)sharedInstance;
 - (void)log:(XTILogerLevel)level format:(NSString *)format, ...;

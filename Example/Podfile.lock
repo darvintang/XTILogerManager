@@ -1,0 +1,26 @@
+PODS:
+  - SSZipArchive (2.1.4)
+  - XTILogerManager (0.0.3):
+    - SSZipArchive
+    - XTILogerManager/XTILoger (= 0.0.3)
+  - XTILogerManager/XTILoger (0.0.3):
+    - SSZipArchive
+
+DEPENDENCIES:
+  - XTILogerManager (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SSZipArchive
+
+EXTERNAL SOURCES:
+  XTILogerManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
+  XTILogerManager: a146d5c1d25493f3b87247d8382d0a70d4da8b5a
+
+PODFILE CHECKSUM: 2be4c83bfb69017a05064f22c51bfe37b532b221
+
+COCOAPODS: 1.7.0.beta.1

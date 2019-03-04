@@ -12,5 +12,5 @@
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *detail;
 @property (nonatomic, assign) BOOL isSwitch;
-@property (nonatomic, copy) void(^clickSwitch)(void);
+@property (nonatomic, copy) void (^ clickSwitch)(void);
 @end

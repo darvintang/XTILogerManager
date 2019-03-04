@@ -1,5 +1,4 @@
 
-
 //
 //  XTILogerSwitchViewController.m
 //  XTILogerManager
@@ -29,6 +28,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"XTILogerSwitchTableViewCell" bundle:nil] forCellReuseIdentifier:@"XTILogerSwitchTableViewCell"];
     [self.switchView addTarget:self action:@selector(clickSwitchView:) forControlEvents:UIControlEventTouchUpInside];
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.selectDict = [[NSMutableDictionary alloc] init];
@@ -61,12 +61,14 @@
     }
     [self.tableView reloadData];
 }
+
 - (NSArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[@"debug", @"info", @"warning", @"error", @"crash"];
     }
     return _dataArray;
 }
+
 #pragma mark - UITableViewDragDelegate, UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -79,7 +81,7 @@
     cell.title = title;
     cell.detail = [[XTILoger sharedInstance] getFileLengthWithName:title];
     cell.isSwitch = self.selectDict[title] != nil;
-    __weak typeof(self) weakSelf = self;
+    __weak typeof(self)weakSelf = self;
     cell.clickSwitch = ^{
         if (weakSelf.isSingle) {
             [self.selectDict removeAllObjects];
@@ -93,9 +95,11 @@
     };
     return cell;
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if (self.view == touches.allObjects.firstObject.view) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
 @end

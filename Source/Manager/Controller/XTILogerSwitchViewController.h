@@ -11,5 +11,5 @@
 
 @interface XTILogerSwitchViewController : UIViewController
 @property (nonatomic, assign) BOOL isSingle;
-@property (nonatomic, strong) void(^clickBtn)(NSArray *list);
+@property (nonatomic, strong) void (^ clickBtn)(NSArray *list);
 @end

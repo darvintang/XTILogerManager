@@ -12,7 +12,7 @@
 @interface XTILoger ()
 @property (nonatomic, strong) NSFileManager *fileMgr;
 @property (nonatomic, strong) dispatch_queue_t logQueue;  // 打印日志的线程队列
-@property (nonatomic, strong) dispatch_queue_t saveQueue; // 打印日志的线程队列
+@property (nonatomic, strong) dispatch_queue_t saveQueue; // 保存日志的线程队列
 @property (nonatomic, assign) XTILogerLevel printLevel;
 @property (nonatomic, assign) XTILogerLevel saveLevel;
 @end
@@ -24,6 +24,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         defaultManager = [[XTILoger alloc] init];
+        defaultManager.userCurrentQueue = YES;
     });
     return defaultManager;
 }
@@ -79,10 +80,13 @@
 - (void)outLogerWith:(XTILogerLevel)level content:(NSString *)content {
 #if DEBUG
     if (level >= self.printLevel) {
-        dispatch_async(self.logQueue, ^{
-//            NSString *ID =[NSString stringWithFormat:@"%@",[NSThread currentThread]];
+        if (self.userCurrentQueue) {
             NSLog(@"[%@] %@", [self getXTILogerLevelNameWith:level], content);
-        });
+        } else {
+            dispatch_async(self.logQueue, ^{
+                NSLog(@"[%@] %@", [self getXTILogerLevelNameWith:level], content);
+            });
+        }
     }
 #endif
     if (level < self.saveLevel) {

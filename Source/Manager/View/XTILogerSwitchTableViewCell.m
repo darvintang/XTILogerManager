@@ -18,15 +18,18 @@
     [super awakeFromNib];
     // Initialization code
 }
+
 - (IBAction)clickSwitchView:(id)sender {
     if (self.clickSwitch) {
         self.clickSwitch();
     }
 }
+
 - (void)setIsSwitch:(BOOL)isSwitch {
     _isSwitch = isSwitch;
     [self.switchView setOn:isSwitch];
 }
+
 - (void)setTitle:(NSString *)title {
     _title = title;
     self.titleLable.text = title;
@@ -36,4 +39,5 @@
     _detail = detail;
     self.detailLabel.text = detail;
 }
+
 @end

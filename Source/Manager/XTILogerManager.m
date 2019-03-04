@@ -18,10 +18,11 @@
     });
     return defaultManager;
 }
-- (void)showManagerViewController:(UIViewController *)VC extDict:(NSDictionary<NSString *,NSString *> *)extDict{
+
+- (void)showManagerViewController:(UIViewController *)VC extDict:(NSDictionary<NSString *, NSString *> *)extDict {
     XTILogerManagerViewController *managerViewController = [[XTILogerManagerViewController alloc] init];
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(XTILogerManagerViewController) *weakManagerViewController = managerViewController;
+    __weak typeof(self)weakSelf = self;
+    __weak typeof(XTILogerManagerViewController) * weakManagerViewController = managerViewController;
     managerViewController.extDict = extDict;
     managerViewController.clickExt = ^(NSString *name) {
         if (weakSelf.clickExt) {
@@ -40,8 +41,10 @@
         [[XTILoger sharedInstance] setValue:@(saveLevel) forKey:@"saveLevel"];
     }
 }
+
 - (void)setPrintLevel:(XTILogerLevel)printLevel {
     _printLevel = printLevel;
     [[XTILoger sharedInstance] setValue:@(printLevel) forKey:@"printLevel"];
 }
+
 @end

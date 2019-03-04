@@ -45,11 +45,13 @@
     [self.view addSubview:self.tableView];
     self.view.backgroundColor = [UIColor grayColor];
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.infoDict[@"1清除日志"] = [[XTILoger sharedInstance] getFileLengthWith:XTILogerLevelAll];
     [self.tableView reloadData];
 }
+
 - (UIView *)headVew {
     UIView *headVew = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kNavAndStatusBarHeight - 0.5)];
     headVew.backgroundColor = [UIColor whiteColor];
@@ -67,11 +69,13 @@
 - (void)close {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 #pragma mark - UITableViewDragDelegate, UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.infoDict.allKeys.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XTILogerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XTILogerTableViewCell" forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellStyleValue1;
@@ -80,6 +84,7 @@
     cell.detailTextLabel.text = self.infoDict[title];
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     XTILogerTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *title = cell.textLabel.text;
@@ -102,6 +107,7 @@
         }
     }
 }
+
 - (void)showActivityViewControllerWithPath:(NSString *)path {
     NSURL *url = [NSURL fileURLWithPath:path];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
@@ -117,11 +123,12 @@
         [self presentViewController:activityViewController animated:YES completion:nil];
     });
 }
+
 - (XTILogerSwitchViewController *)switchViewController {
     if (!_switchViewController) {
         _switchViewController = [[XTILogerSwitchViewController alloc] init];
         _switchViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        __weak typeof(self) weakSelf = self;
+        __weak typeof(self)weakSelf = self;
         _switchViewController.clickBtn = ^(NSArray *list) {
             if (weakSelf.switchViewController.isSingle) {
                 XTILogerLevel level = [[XTILoger sharedInstance] getXTILogerLevelWith:list.firstObject];
@@ -147,6 +154,7 @@
     }
     return _switchViewController;
 }
+
 - (NSMutableDictionary<NSString *, NSString *> *)infoDict {
     if (!_infoDict) {
         _infoDict = [[NSMutableDictionary alloc] init];
@@ -156,10 +164,12 @@
     }
     return _infoDict;
 }
+
 - (void)setExtDict:(NSDictionary<NSString *, NSString *> *)extDict {
     _extDict = extDict;
     [self.infoDict addEntriesFromDictionary:extDict];
 }
+
 - (UITableView *)tableView {
     if (!_tableView) {
         CGFloat tableViewH = kScreenHeight - kNavAndStatusBarHeight;
@@ -182,4 +192,5 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 }
+
 @end

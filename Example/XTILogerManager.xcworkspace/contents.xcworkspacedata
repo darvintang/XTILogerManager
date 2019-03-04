@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:XTILogerManager/XTILogerManager.xcodeproj">
+      location = "group:/Users/input/Desktop/iOSCode/XTILogerManager/Example/XTILogerManager/XTILogerManagerDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

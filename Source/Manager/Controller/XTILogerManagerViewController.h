@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface XTILogerManagerViewController : UIViewController
-@property (nonatomic, copy) NSDictionary<NSString *,NSString*> *extDict;
-@property (nonatomic, copy) void (^clickExt)(NSString *name);
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> *extDict;
+@property (nonatomic, copy) void (^ clickExt)(NSString *name);
 
 @end
