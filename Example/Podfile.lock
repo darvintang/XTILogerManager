@@ -1,9 +1,12 @@
 PODS:
+  - MBProgressHUD (1.1.0)
   - SSZipArchive (2.1.4)
-  - XTILogerManager (0.0.3):
+  - XTILogerManager (0.0.4):
+    - MBProgressHUD
     - SSZipArchive
-    - XTILogerManager/XTILoger (= 0.0.3)
-  - XTILogerManager/XTILoger (0.0.3):
+    - XTILogerManager/XTILoger (= 0.0.4)
+  - XTILogerManager/XTILoger (0.0.4):
+    - MBProgressHUD
     - SSZipArchive
 
 DEPENDENCIES:
@@ -11,6 +14,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - MBProgressHUD
     - SSZipArchive
 
 EXTERNAL SOURCES:
@@ -18,9 +22,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
-  XTILogerManager: a146d5c1d25493f3b87247d8382d0a70d4da8b5a
+  XTILogerManager: 3c397ab64b8587bf45ec0cba90ba3a10258a4f0e
 
-PODFILE CHECKSUM: 2be4c83bfb69017a05064f22c51bfe37b532b221
+PODFILE CHECKSUM: 3681ac747ec1bb870ad00c9635bb790bb80f03d8
 
 COCOAPODS: 1.7.0.beta.1

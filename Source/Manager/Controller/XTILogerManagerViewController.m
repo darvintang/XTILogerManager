@@ -11,6 +11,12 @@
 #import "XTILogerTableViewCell.h"
 #import "XTILogerManager.h"
 
+#if __has_include(<MBProgressHUD/MBProgressHUD.h>)
+#import <MBProgressHUD/MBProgressHUD.h>
+#else
+#import "MBProgressHUD.h"
+#endif
+
 #ifndef isIPhoneX
 #define isIPhoneX (kScreenWidth == 812.0f || kScreenHeight == 812.0f)
 #endif
@@ -84,7 +90,9 @@
     cell.detailTextLabel.text = self.infoDict[title];
     return cell;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     XTILogerTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSString *title = cell.textLabel.text;
@@ -128,6 +136,7 @@
     if (!_switchViewController) {
         _switchViewController = [[XTILogerSwitchViewController alloc] init];
         _switchViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        _switchViewController.modalTransitionStyle  = UIModalTransitionStyleCrossDissolve;
         __weak typeof(self)weakSelf = self;
         _switchViewController.clickBtn = ^(NSArray *list) {
             if (weakSelf.switchViewController.isSingle) {
@@ -136,6 +145,7 @@
                 [[NSUserDefaults standardUserDefaults] setValue:list.firstObject forKey:@"XTILogerManager.saveLevel"];
                 weakSelf.infoDict[@"2日志等级"] = [[XTILoger sharedInstance] getSaveLevel];
             } else {
+                [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
                 __block NSMutableArray<NSString *> *filesPath = [[NSMutableArray<NSString *> alloc] init];
                 [list enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
                     [[[XTILoger sharedInstance] getLogerFilePathsWith:[[XTILoger sharedInstance] getXTILogerLevelWith:obj]] enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
@@ -148,6 +158,7 @@
                 if (isSuccess) {
                     [weakSelf showActivityViewControllerWithPath:path];
                 }
+                [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
             }
             [weakSelf.tableView reloadData];
         };
@@ -178,14 +189,12 @@
         _tableView.delegate = self;
         _tableView.tableFooterView = [UIView new];
         if (@available(ios 11.0, *)) {
-            _tableView.estimatedRowHeight = 0;
-            _tableView.estimatedSectionFooterHeight = 0;
-            _tableView.estimatedSectionHeaderHeight = 0;
             _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
-        [_tableView registerNib:[UINib nibWithNibName:@"XTILogerTableViewCell" bundle:nil] forCellReuseIdentifier:@"XTILogerTableViewCell"];
+
+        [_tableView registerNib:PodNibWithClass(XTILogerTableViewCell.class) forCellReuseIdentifier:@"XTILogerTableViewCell"];
     }
     return _tableView;
 }

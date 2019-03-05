@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "XTILoger.h"
 
+#define PodNibWithClass(class) [UINib nibWithNibName:NSStringFromClass(class) bundle:[NSBundle bundleForClass:class]]
+
 @interface XTILogerSwitchViewController : UIViewController
 @property (nonatomic, assign) BOOL isSingle;
 @property (nonatomic, strong) void (^ clickBtn)(NSArray *list);

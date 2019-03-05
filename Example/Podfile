@@ -5,7 +5,7 @@ project 'XTILogerManager/XTILogerManagerDemo.xcodeproj'
 
 target 'XTILogerManagerDemo' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-   use_frameworks!
+#   use_frameworks!
 
   # Pods for XTILogerManager
 #  pod 'SSZipArchive'

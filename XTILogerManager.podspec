@@ -14,9 +14,15 @@ Pod::Spec.new do |s|
   s.subspec 'XTILoger' do |ss|
     ss.source_files = 'Source/XTILoger/*.{h,m}'
   end
-  
-  s.source_files = 'Source/Manager/**/*.{h,m,xib}'
+  s.resources = 'Source/Manager/**/*.xib'
+  s.resource_bundles = {
+    'XTILogerManager' => [
+    'Pod/**/*.xib'
+    ]
+  }
+  s.source_files = 'Source/Manager/**/*.{h,m}'
   s.dependency 'SSZipArchive'
+  s.dependency 'MBProgressHUD'
   s.requires_arc  = true
   
 end

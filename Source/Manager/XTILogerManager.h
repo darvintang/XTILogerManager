@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#if __has_include(<SSZipArchive/SSZipArchive.h>)
 #import <SSZipArchive/SSZipArchive.h>
+#else
+#import "SSZipArchive.h"
+#endif
+
 #import "XTILoger.h"
 
 /**
