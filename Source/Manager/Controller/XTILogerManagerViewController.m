@@ -18,7 +18,7 @@
 #endif
 
 #ifndef isIPhoneX
-#define isIPhoneX (kScreenWidth == 812.0f || kScreenHeight == 812.0f)
+#define isIPhoneX (kScreenWidth == 812.0f || kScreenHeight == 812.0f || kScreenWidth == 896.0f || kScreenHeight == 896.0f)
 #endif
 
 #ifndef kNavAndStatusBarHeight
@@ -91,7 +91,7 @@
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    return 60;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     XTILogerTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -104,11 +104,17 @@
             [self.tableView reloadData];
         });
     } else if ([title isEqualToString:@"2日志等级"]) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         self.switchViewController.isSingle = YES;
-        [self presentViewController:self.switchViewController animated:YES completion:nil];
+        [self presentViewController:self.switchViewController animated:YES completion:^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }];
     } else if ([title isEqualToString:@"3分享日志"]) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         self.switchViewController.isSingle = NO;
-        [self presentViewController:self.switchViewController animated:YES completion:nil];
+        [self presentViewController:self.switchViewController animated:YES completion:^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        }];
     } else {
         if (self.clickExt) {
             self.clickExt(title);

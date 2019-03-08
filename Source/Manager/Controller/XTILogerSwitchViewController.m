@@ -30,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"XTILogerSwitchTableViewCell" bundle:[NSBundle bundleForClass:XTILogerSwitchTableViewCell.class]] forCellReuseIdentifier:@"XTILogerSwitchTableViewCell"];
     [self.switchView addTarget:self action:@selector(clickSwitchView:) forControlEvents:UIControlEventTouchUpInside];
 }
