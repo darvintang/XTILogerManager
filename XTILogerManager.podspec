@@ -14,17 +14,17 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
 
   s.subspec 'XTILoger' do |ss|
-    ss.source_files = 'XTInputKit/Classes//XTILoger/*.{h,m}'
+    ss.source_files = 'XTILogerManager/Classes//XTILoger/*.{h,m}'
   end
 
-  s.resources = 'XTInputKit/Classes//Manager/**/*.xib'
+  s.resources = 'XTILogerManager/Classes//Manager/**/*.xib'
   s.resource_bundles = {
     'XTILogerManager' => [
-    'XTInputKit/Classes/Manager/**/*.xib'
+    'XTILogerManager/Classes/Manager/**/*.xib'
     ]
   }
 
-  s.source_files = 'XTInputKit/Classes/Manager/**/*.{h,m}'
+  s.source_files = 'XTILogerManager/Classes/Manager/**/*.{h,m}'
   s.dependency 'SSZipArchive'
   s.dependency 'MBProgressHUD'
   s.requires_arc  = true
