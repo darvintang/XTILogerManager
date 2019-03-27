@@ -14,10 +14,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
 
   s.subspec 'XTILoger' do |ss|
-    ss.source_files = 'XTILogerManager/Classes//XTILoger/*.{h,m}'
+    ss.source_files = 'XTILogerManager/Classes/XTILoger/*.{h,m}'
   end
 
-  s.resources = 'XTILogerManager/Classes//Manager/**/*.xib'
   s.resource_bundles = {
     'XTILogerManager' => [
     'XTILogerManager/Classes/Manager/**/*.xib'
