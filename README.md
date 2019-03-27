@@ -1,5 +1,10 @@
 # XTILogerManager
 
+[![CI Status](https://img.shields.io/travis/xt-input/XTILogerManager.svg?style=flat)](https://travis-ci.org/xt-input/XTILogerManager)
+[![Version](https://img.shields.io/cocoapods/v/XTILogerManager.svg?style=flat)](https://cocoapods.org/pods/XTILogerManager)
+[![License](https://img.shields.io/cocoapods/l/XTILogerManager.svg?style=flat)](https://cocoapods.org/pods/XTILogerManager)
+[![Platform](https://img.shields.io/cocoapods/p/XTILogerManager.svg?style=flat)](https://cocoapods.org/pods/XTILogerManager)
+
 使用方法：
 ```
     XTILoger_Debug(@"%@__%@",@"日志测试",self);
