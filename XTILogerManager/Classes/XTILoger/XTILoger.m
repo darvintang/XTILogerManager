@@ -149,12 +149,8 @@
 }
 
 - (XTILogerLevel)saveLevel {
-    if (!_saveLevel) {
-        NSString *flag = [[NSUserDefaults standardUserDefaults] stringForKey:@"XTILogerManager.saveLevel"];
-        _saveLevel = [self getXTILogerLevelWith:flag];
-        if (_saveLevel == XTILogerLevelAll) {
-            _saveLevel = XTILogerLevelError;
-        }
+    if (_saveLevel < XTILogerLevelAll) {
+        _saveLevel = XTILogerLevelError;
     }
     return _saveLevel;
 }

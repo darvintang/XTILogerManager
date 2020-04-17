@@ -30,7 +30,7 @@
  - XTILogerLevelOff: 关闭日志
  */
 typedef NS_ENUM (NSInteger, XTILogerLevel) {
-    XTILogerLevelAll,
+    XTILogerLevelAll = 134201,
     XTILogerLevelDebug,
     XTILogerLevelInfo,
     XTILogerLevelWarning,

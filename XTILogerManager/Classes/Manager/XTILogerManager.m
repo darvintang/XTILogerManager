@@ -25,7 +25,7 @@
             [filesPath addObject:[NSString stringWithFormat:@"%@/%@", [XTILoger shared].logFolderPath, obj]];
         }];
     }];
-    NSString *path = [[XTILoger shared].logFolderPath stringByAppendingPathComponent:@"/log.zip"];
+    NSString *path = [[XTILoger shared].logFolderPath stringByAppendingPathComponent:@"/XTILoger.zip"];
     //创建不带密码zip压缩包
     BOOL isSuccess = [SSZipArchive createZipFileAtPath:path withFilesAtPaths:filesPath];
     if (isSuccess) {
@@ -58,11 +58,8 @@
 
 #pragma mark -
 - (void)setSaveLevel:(XTILogerLevel)saveLevel {
-    NSString *flag = [[NSUserDefaults standardUserDefaults] stringForKey:@"XTILogerManager.saveLevel"];
-    if (!flag) {
-        _saveLevel = saveLevel;
-        [[XTILoger shared] setValue:@(saveLevel) forKey:@"saveLevel"];
-    }
+    _saveLevel = saveLevel;
+    [[XTILoger shared] setValue:@(saveLevel) forKey:@"saveLevel"];
 }
 
 - (void)setPrintLevel:(XTILogerLevel)printLevel {
