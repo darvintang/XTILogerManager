@@ -7,10 +7,9 @@
 //
 
 #import "XTILogerManager.h"
-#import "XTILogerManagerViewController.h"
 
 @implementation XTILogerManager
-+ (instancetype)sharedInstance {
++ (instancetype)shared {
     static XTILogerManager *defaultManager;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -19,18 +18,42 @@
     return defaultManager;
 }
 
-- (void)showManagerViewController:(UIViewController *)VC extDict:(NSDictionary<NSString *, NSString *> *)extDict {
-    XTILogerManagerViewController *managerViewController = [[XTILogerManagerViewController alloc] init];
-    __weak typeof(self)weakSelf = self;
-    __weak typeof(XTILogerManagerViewController) * weakManagerViewController = managerViewController;
-    managerViewController.extDict = extDict;
-    managerViewController.clickExt = ^(NSString *name) {
-        if (weakSelf.clickExt) {
-            weakSelf.clickExt(weakManagerViewController, name);
+- (void)showManagerViewController:(UIViewController *)VC complete:(void (^)(NSString *path))complete {
+    __block NSMutableArray<NSString *> *filesPath = [[NSMutableArray<NSString *> alloc] init];
+    [@[@"debug", @"info", @"warning", @"error", @"crash"] enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        [[[XTILoger shared] getLogerFilePathsWith:[[XTILoger shared] getXTILogerLevelWith:obj]] enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+            [filesPath addObject:[NSString stringWithFormat:@"%@/%@", [XTILoger shared].logFolderPath, obj]];
+        }];
+    }];
+    NSString *path = [[XTILoger shared].logFolderPath stringByAppendingPathComponent:@"/log.zip"];
+    //创建不带密码zip压缩包
+    BOOL isSuccess = [SSZipArchive createZipFileAtPath:path withFilesAtPaths:filesPath];
+    if (isSuccess) {
+        if (complete) {
+            complete(path);
         }
-    };
+        NSURL *url = [NSURL fileURLWithPath:path];
+        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
+        NSArray *excludedActivities = @[UIActivityTypePostToTwitter, UIActivityTypePostToFacebook,
+                                        UIActivityTypePostToWeibo,
+                                        UIActivityTypeMessage, UIActivityTypeMail,
+                                        UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
+                                        UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
+                                        UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr,
+                                        UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo];
+        activityViewController.excludedActivityTypes = excludedActivities;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [VC presentViewController:activityViewController animated:YES completion:nil];
+        });
+    }
+}
 
-    [VC presentViewController:managerViewController animated:YES completion:nil];
+- (BOOL)removeLogerFiles {
+    return [self removeLogerFileWithLevel:XTILogerLevelAll];
+}
+
+- (BOOL)removeLogerFileWithLevel:(XTILogerLevel)level {
+    return [XTILoger.shared removeLogerFileWith:level];
 }
 
 #pragma mark -
@@ -38,13 +61,13 @@
     NSString *flag = [[NSUserDefaults standardUserDefaults] stringForKey:@"XTILogerManager.saveLevel"];
     if (!flag) {
         _saveLevel = saveLevel;
-        [[XTILoger sharedInstance] setValue:@(saveLevel) forKey:@"saveLevel"];
+        [[XTILoger shared] setValue:@(saveLevel) forKey:@"saveLevel"];
     }
 }
 
 - (void)setPrintLevel:(XTILogerLevel)printLevel {
     _printLevel = printLevel;
-    [[XTILoger sharedInstance] setValue:@(printLevel) forKey:@"printLevel"];
+    [[XTILoger shared] setValue:@(printLevel) forKey:@"printLevel"];
 }
 
 @end

@@ -12,11 +12,11 @@
 
 #define XTILogerManagerFormat(format) [NSString stringWithFormat:@"%@:%@ > %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], [NSNumber numberWithInt:__LINE__], format]
 
-#define XTILoger_Debug(format, ...)   [[XTILoger sharedInstance] logDebugWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
-#define XTILoger_Info(format, ...)    [[XTILoger sharedInstance] logInfoWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
-#define XTILoger_Warning(format, ...) [[XTILoger sharedInstance] logWarningWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
-#define XTILoger_Error(format, ...)   [[XTILoger sharedInstance] logErrorWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
-#define XTILoger_Crash(format, ...)   [[XTILoger sharedInstance] logCrashWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Debug(format, ...)   [[XTILoger shared] logDebugWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Info(format, ...)    [[XTILoger shared] logInfoWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Warning(format, ...) [[XTILoger shared] logWarningWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Error(format, ...)   [[XTILoger shared] logErrorWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Crash(format, ...)   [[XTILoger shared] logCrashWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
 
 /**
  日志等级
@@ -47,7 +47,7 @@ typedef NS_ENUM (NSInteger, XTILogerLevel) {
  */
 @property (nonatomic, assign) BOOL userCurrentQueue;
 
-+ (instancetype)sharedInstance;
++ (instancetype)shared;
 - (void)log:(XTILogerLevel)level format:(NSString *)format, ...;
 
 - (void)logDebugWithFormat:(NSString *)format, ...;

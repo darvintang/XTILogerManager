@@ -28,17 +28,6 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[@"2312"] applicationActivities:nil];
-//    NSArray *excludedActivities = @[UIActivityTypePostToTwitter, UIActivityTypePostToFacebook,
-//                                    UIActivityTypePostToWeibo,
-//                                    UIActivityTypeMessage, UIActivityTypeMail,
-//                                    UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
-//                                    UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
-//                                    UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr,
-//                                    UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo];
-//    activityViewController.excludedActivityTypes = excludedActivities;
-
-//    [self presentViewController:activityViewController animated:YES completion:nil];
     for (int i = 0; i < 100; i++) {
         XTILoger_Debug(@"%@__%@", @"日志测试", self);
         XTILoger_Info(@"%@__%@", @"日志测试", self);
@@ -46,7 +35,9 @@
         XTILoger_Error(@"%@__%@", @"日志测试", self);
         XTILoger_Crash(@"%@__%@", @"日志测试", self);
     }
-    [[XTILogerManager sharedInstance] showManagerViewController:self extDict:nil];
+    [[XTILogerManager shared] showManagerViewController:self complete:^(NSString *path) {
+        XTILoger_Info(@"%@", path);
+    }];
 }
 
 @end

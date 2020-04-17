@@ -19,7 +19,7 @@
 
 @implementation XTILoger
 
-+ (instancetype)sharedInstance {
++ (instancetype)shared {
     static XTILoger *defaultManager;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

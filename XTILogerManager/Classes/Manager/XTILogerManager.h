@@ -20,12 +20,15 @@
  日志管理类，包括设置输出日志等级、分享日志文件。同一级别的日志文件只保存两个
  */
 @interface XTILogerManager : NSObject
+
 /**
- 日志控制器，主要内容就是一个表格，点击表格的cell会调用clickExt闭包(日志相关的闭包除外)
- 扩展功能，例如需要扩展一个切换服务器域名功能，那就将功能的名字放到字典里，key用于title，value用于detail，然后在clickExt闭包实现相关功能。
+将日志压缩输出
  */
-- (void)showManagerViewController:(UIViewController *)VC extDict:(NSDictionary<NSString *, NSString *> *)extDict;
-@property (nonatomic, copy) void (^ clickExt)(UIViewController *viewController, NSString *name);
+- (void)showManagerViewController:(UIViewController *)VC complete:(void (^)(NSString *path))complete;
+
+- (BOOL)removeLogerFiles;
+- (BOOL)removeLogerFileWithLevel:(XTILogerLevel)level;
+
 /**
  控制台输出的日志等级，默认全部打开
  */
@@ -35,6 +38,6 @@
  */
 @property (nonatomic, assign) XTILogerLevel saveLevel;
 
-+ (instancetype)sharedInstance;
++ (instancetype)shared;
 
 @end
