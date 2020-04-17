@@ -106,7 +106,6 @@
 				AE436B0020D5FF95003FAE69 /* Sources */,
 				AE436B0120D5FF95003FAE69 /* Frameworks */,
 				AE436B0220D5FF95003FAE69 /* Resources */,
-				4E5AD034A418FD8899CD5284 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,23 +162,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4E5AD034A418FD8899CD5284 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-XTILogerManagerDemo/Pods-XTILogerManagerDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-XTILogerManagerDemo/Pods-XTILogerManagerDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XTILogerManagerDemo/Pods-XTILogerManagerDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		82B631EF3B998A7F00494D8D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,7 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZZ2Q79GEK8;
 				INFOPLIST_FILE = XTILogerManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZZ2Q79GEK8;
 				INFOPLIST_FILE = XTILogerManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
