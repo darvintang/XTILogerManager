@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef LogerFileMaxLength
 #define LogerFileMaxLength 1048576 //日志文件最大长度，1M
+#endif
 
 #define XTILogerManagerFormat(format) [NSString stringWithFormat:@"%@:%@ > %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], [NSNumber numberWithInt:__LINE__], format]
 
@@ -16,7 +18,7 @@
 #define XTILoger_Info(format, ...)    [[XTILoger shared] logInfoWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
 #define XTILoger_Warning(format, ...) [[XTILoger shared] logWarningWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
 #define XTILoger_Error(format, ...)   [[XTILoger shared] logErrorWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
-#define XTILoger_Crash(format, ...)   [[XTILoger shared] logCrashWithFormat:XTILogerManagerFormat(format), ## __VA_ARGS__]
+#define XTILoger_Crash(format, ...)   [[XTILoger shared] logCrashWithFormat:format, ## __VA_ARGS__]
 
 /**
  日志等级

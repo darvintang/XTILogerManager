@@ -8,11 +8,20 @@
 
 #import "XTILogerManager.h"
 
+void XTIUncaughtExceptionHandler(NSException *exception) {
+    NSArray *arr = [exception callStackSymbols];
+    NSString *reason = [exception reason];
+    NSString *name = [exception name];
+    NSString *content = [NSString stringWithFormat:@"\n========异常错误报告========\nName:%@\nReason:\n%@\nCallStackSymbols:\n%@", name, reason, [arr componentsJoinedByString:@"\n"]];
+    XTILoger_Crash(@"%@", content);
+}
+
 @implementation XTILogerManager
 + (instancetype)shared {
     static XTILogerManager *defaultManager;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        NSSetUncaughtExceptionHandler(&XTIUncaughtExceptionHandler);
         defaultManager = [[XTILogerManager alloc] init];
     });
     return defaultManager;
