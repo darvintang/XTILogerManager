@@ -24,7 +24,8 @@
 /**
 将日志压缩输出
  */
-- (void)showManagerViewController:(UIViewController *)VC complete:(void (^)(NSString *path))complete;
+- (void)showLogZipWithFormVC:(UIViewController *)VC complete:(BOOL (^)(NSString *path))complete;
+- (void)showLogZipWithLevel:(XTILogerLevel)level formVC:(UIViewController *)VC complete:(BOOL (^)(NSString *path))complete;
 
 - (BOOL)removeLogerFiles;
 - (BOOL)removeLogerFileWithLevel:(XTILogerLevel)level;

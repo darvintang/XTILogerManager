@@ -35,8 +35,9 @@
         XTILoger_Error(@"%@__%@", @"日志测试", self);
         XTILoger_Crash(@"%@__%@", @"日志测试", self);
     }
-    [[XTILogerManager shared] showManagerViewController:self complete:^(NSString *path) {
+    [[XTILogerManager shared] showLogZipWithFormVC:self complete:^BOOL (NSString *path) {
         XTILoger_Info(@"%@", path);
+        return YES;
     }];
 }
 

@@ -27,9 +27,14 @@ void XTIUncaughtExceptionHandler(NSException *exception) {
     return defaultManager;
 }
 
-- (void)showManagerViewController:(UIViewController *)VC complete:(void (^)(NSString *path))complete {
+- (void)showLogZipWithFormVC:(UIViewController *)VC complete:(BOOL (^)(NSString *path))complete {
+    [self showLogZipWithLevel:(XTILogerLevelAll) formVC:(VC) complete:complete];
+}
+
+- (void)showLogZipWithLevel:(XTILogerLevel)level formVC:(UIViewController *)VC complete:(BOOL (^)(NSString *path))complete {
     __block NSMutableArray<NSString *> *filesPath = [[NSMutableArray<NSString *> alloc] init];
-    [@[@"debug", @"info", @"warning", @"error", @"crash"] enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+
+    [[[XTILoger shared] getLogerFilePathsWith:level] enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
         [[[XTILoger shared] getLogerFilePathsWith:[[XTILoger shared] getXTILogerLevelWith:obj]] enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
             [filesPath addObject:[NSString stringWithFormat:@"%@/%@", [XTILoger shared].logFolderPath, obj]];
         }];
@@ -39,21 +44,23 @@ void XTIUncaughtExceptionHandler(NSException *exception) {
     BOOL isSuccess = [SSZipArchive createZipFileAtPath:path withFilesAtPaths:filesPath];
     if (isSuccess) {
         if (complete) {
-            complete(path);
+            BOOL flag = complete(path);
+            if (flag) {
+                NSURL *url = [NSURL fileURLWithPath:path];
+                UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
+                NSArray *excludedActivities = @[UIActivityTypePostToTwitter, UIActivityTypePostToFacebook,
+                                                UIActivityTypePostToWeibo,
+                                                UIActivityTypeMessage, UIActivityTypeMail,
+                                                UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
+                                                UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
+                                                UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr,
+                                                UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo];
+                activityViewController.excludedActivityTypes = excludedActivities;
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [VC presentViewController:activityViewController animated:YES completion:nil];
+                });
+            }
         }
-        NSURL *url = [NSURL fileURLWithPath:path];
-        UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
-        NSArray *excludedActivities = @[UIActivityTypePostToTwitter, UIActivityTypePostToFacebook,
-                                        UIActivityTypePostToWeibo,
-                                        UIActivityTypeMessage, UIActivityTypeMail,
-                                        UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
-                                        UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
-                                        UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr,
-                                        UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo];
-        activityViewController.excludedActivityTypes = excludedActivities;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [VC presentViewController:activityViewController animated:YES completion:nil];
-        });
     }
 }
 

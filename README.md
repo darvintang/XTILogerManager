@@ -15,9 +15,9 @@
 ```
 效果：
 ```
-2018-06-17 20:29:14.177867+0800 XTILogerManager[5685:2785897] [debug] ViewController.m:43 > 日志测试__<ViewController: 0x151d05a70>
-2018-06-17 20:29:14.182777+0800 XTILogerManager[5685:2785898] [info] ViewController.m:44 > 日志测试__<ViewController: 0x151d05a70>
-2018-06-17 20:29:14.183181+0800 XTILogerManager[5685:2785898] [warning] ViewController.m:45 > 日志测试__<ViewController: 0x151d05a70>
-2018-06-17 20:29:14.183701+0800 XTILogerManager[5685:2785898] [error] ViewController.m:46 > 日志测试__<ViewController: 0x151d05a70>
-2018-06-17 20:29:14.184396+0800 XTILogerManager[5685:2785898] [crash] ViewController.m:47 > 日志测试__<ViewController: 0x151d05a70>
+2020-04-20 09:55:41.996079+0800 XTILogerManagerDemo[54805:6806843] [debug] ViewController.m:32 > 日志测试__<ViewController: 0x7fb6e8105320>
+2020-04-20 09:55:41.996291+0800 XTILogerManagerDemo[54805:6806843] [info] ViewController.m:33 > 日志测试__<ViewController: 0x7fb6e8105320>
+2020-04-20 09:55:41.996484+0800 XTILogerManagerDemo[54805:6806843] [warning] ViewController.m:34 > 日志测试__<ViewController: 0x7fb6e8105320>
+2020-04-20 09:55:41.996622+0800 XTILogerManagerDemo[54805:6806843] [error] ViewController.m:35 > 日志测试__<ViewController: 0x7fb6e8105320>
+2020-04-20 09:55:41.998184+0800 XTILogerManagerDemo[54805:6806843] [crash] 日志测试__<ViewController: 0x7fb6e8105320>
 ```
