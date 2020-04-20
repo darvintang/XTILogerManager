@@ -15,6 +15,12 @@
 @property (nonatomic, strong) dispatch_queue_t saveQueue; // 保存日志的线程队列
 @property (nonatomic, assign) XTILogerLevel printLevel;
 @property (nonatomic, assign) XTILogerLevel saveLevel;
+
+/// 单个日志文件大小，默认1024KB，KB为最小单位
+@property (nonatomic, assign) NSInteger fileMaxSize;
+/// 同一日志等级最大文件数量，默认5
+@property (nonatomic, assign) NSInteger fileMaxCount;
+
 @end
 
 @implementation XTILoger
@@ -25,6 +31,8 @@
     dispatch_once(&onceToken, ^{
         defaultManager = [[XTILoger alloc] init];
         defaultManager.userCurrentQueue = YES;
+        defaultManager.fileMaxCount = 5;
+        defaultManager.fileMaxSize = 1024;
     });
     return defaultManager;
 }
@@ -108,13 +116,24 @@
         NSDictionary *fileAttributes = [self.fileMgr attributesOfItemAtPath:logFileName error:nil];
         unsigned long long fileSize = [fileAttributes fileSize];
 
-        if (fileSize >= LogerFileMaxLength) {
-            NSString *newFileName = [NSString stringWithFormat:@"%@.old", logFileName];
-            if ([self.fileMgr fileExistsAtPath:newFileName]) {
-                [self.fileMgr removeItemAtPath:newFileName error:nil];
+        if (fileSize >= self.fileMaxSize * 1024) {
+            for (NSInteger i = self.fileMaxCount; i > 0; i--) {
+                NSString *fileName = [NSString stringWithFormat:@"%@.%zd", logFileName, i];
+                if (i == 0) {
+                    // 文件更名
+                    [self.fileMgr moveItemAtPath:logFileName toPath:[NSString stringWithFormat:@"%@.1", logFileName] error:nil];
+                } else if (i == self.fileMaxCount) {
+                    if ([self.fileMgr fileExistsAtPath:fileName]) {
+                        [self.fileMgr removeItemAtPath:fileName error:nil];
+                    }
+                } else {
+                    if ([self.fileMgr fileExistsAtPath:fileName]) {
+                        NSString *newFileName = [NSString stringWithFormat:@"%@.%zd", logFileName, i + 1];
+                        [self.fileMgr moveItemAtPath:fileName toPath:newFileName error:nil];
+                    }
+                }
             }
-            // 文件更名
-            [self.fileMgr moveItemAtPath:logFileName toPath:newFileName error:nil];
+
             // 重新创建新文件
             [self.fileMgr createFileAtPath:logFileName contents:nil attributes:nil];
         }
@@ -192,16 +211,19 @@
 }
 
 - (NSArray<NSString *> *)getLogerFilePathsWith:(XTILogerLevel)level {
-    NSArray<NSString *> *filePaths = [self.fileMgr contentsOfDirectoryAtPath:self.logFolderPath error:nil];
+    NSPredicate *predicate =  [NSPredicate predicateWithFormat:@"SELF LIKE 'log_*'"];
+
+    NSArray<NSString *> *filePaths = [[self.fileMgr contentsOfDirectoryAtPath:self.logFolderPath error:nil] filteredArrayUsingPredicate:predicate];
+
     if (level != XTILogerLevelAll) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"SELF LIKE '%@*'", [self getXTILogerLevelNameWith:level]]];
+        predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"SELF LIKE '%@*'", [self getXTILogerLevelNameWith:level]]];
         filePaths = [filePaths filteredArrayUsingPredicate:predicate];
     }
     return filePaths;
 }
 
 - (NSString *)getLogerFilePathWith:(XTILogerLevel)level {
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@.txt", self.logFolderPath, [self getXTILogerLevelNameWith:level]];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@.log", self.logFolderPath, [self getXTILogerLevelNameWith:level]];
     return filePath;
 }
 
@@ -235,22 +257,22 @@
     NSString *levelName;
     switch (level) {
         case XTILogerLevelOff:
-            levelName = @"off";
+            levelName = @"log_off";
             break;
         case XTILogerLevelInfo:
-            levelName = @"info";
+            levelName = @"log_info";
             break;
         case XTILogerLevelDebug:
-            levelName = @"debug";
+            levelName = @"log_debug";
             break;
         case XTILogerLevelWarning:
-            levelName = @"warning";
+            levelName = @"log_warning";
             break;
         case XTILogerLevelError:
-            levelName = @"error";
+            levelName = @"log_error";
             break;
         case XTILogerLevelCrash:
-            levelName = @"crash";
+            levelName = @"log_crash";
             break;
         default:
             levelName = @"";
@@ -261,17 +283,17 @@
 
 - (XTILogerLevel)getXTILogerLevelWith:(NSString *)name {
     XTILogerLevel level = XTILogerLevelOff;
-    if ([name isEqualToString:@"off"]) {
+    if ([name isEqualToString:@"log_off"]) {
         level = XTILogerLevelOff;
-    } else if ([name isEqualToString:@"info"]) {
+    } else if ([name isEqualToString:@"log_info"]) {
         level = XTILogerLevelInfo;
-    } else if ([name isEqualToString:@"debug"]) {
+    } else if ([name isEqualToString:@"log_debug"]) {
         level = XTILogerLevelDebug;
-    } else if ([name isEqualToString:@"warning"]) {
+    } else if ([name isEqualToString:@"log_warning"]) {
         level = XTILogerLevelWarning;
-    } else if ([name isEqualToString:@"error"]) {
+    } else if ([name isEqualToString:@"log_error"]) {
         level = XTILogerLevelError;
-    } else if ([name isEqualToString:@"crash"]) {
+    } else if ([name isEqualToString:@"log_crash"]) {
         level = XTILogerLevelCrash;
     } else {
         level = XTILogerLevelAll;

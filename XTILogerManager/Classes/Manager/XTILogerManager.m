@@ -35,31 +35,31 @@ void XTIUncaughtExceptionHandler(NSException *exception) {
     __block NSMutableArray<NSString *> *filesPath = [[NSMutableArray<NSString *> alloc] init];
 
     [[[XTILoger shared] getLogerFilePathsWith:level] enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
-        [[[XTILoger shared] getLogerFilePathsWith:[[XTILoger shared] getXTILogerLevelWith:obj]] enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
-            [filesPath addObject:[NSString stringWithFormat:@"%@/%@", [XTILoger shared].logFolderPath, obj]];
-        }];
+        [filesPath addObject:[NSString stringWithFormat:@"%@/%@", [XTILoger shared].logFolderPath, obj]];
     }];
     NSString *path = [[XTILoger shared].logFolderPath stringByAppendingPathComponent:@"/XTILoger.zip"];
     //创建不带密码zip压缩包
     BOOL isSuccess = [SSZipArchive createZipFileAtPath:path withFilesAtPaths:filesPath];
     if (isSuccess) {
+        BOOL flag = YES;
+
         if (complete) {
-            BOOL flag = complete(path);
-            if (flag) {
-                NSURL *url = [NSURL fileURLWithPath:path];
-                UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
-                NSArray *excludedActivities = @[UIActivityTypePostToTwitter, UIActivityTypePostToFacebook,
-                                                UIActivityTypePostToWeibo,
-                                                UIActivityTypeMessage, UIActivityTypeMail,
-                                                UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
-                                                UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
-                                                UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr,
-                                                UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo];
-                activityViewController.excludedActivityTypes = excludedActivities;
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [VC presentViewController:activityViewController animated:YES completion:nil];
-                });
-            }
+            flag = complete(path);
+        }
+        if (flag) {
+            NSURL *url = [NSURL fileURLWithPath:path];
+            UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
+            NSArray *excludedActivities = @[UIActivityTypePostToTwitter, UIActivityTypePostToFacebook,
+                                            UIActivityTypePostToWeibo,
+                                            UIActivityTypeMessage, UIActivityTypeMail,
+                                            UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
+                                            UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
+                                            UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr,
+                                            UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo];
+            activityViewController.excludedActivityTypes = excludedActivities;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [VC presentViewController:activityViewController animated:YES completion:nil];
+            });
         }
     }
 }
@@ -72,7 +72,23 @@ void XTIUncaughtExceptionHandler(NSException *exception) {
     return [XTILoger.shared removeLogerFileWith:level];
 }
 
-#pragma mark -
+#pragma mark - setter and getter
+- (void)setFileMaxSize:(NSInteger)fileMaxSize {
+    [[XTILoger shared] setValue:@(fileMaxSize) forKey:@"fileMaxSize"];
+}
+
+- (NSInteger)fileMaxSize {
+    return [[[XTILoger shared] valueForKeyPath:@"fileMaxSize"] integerValue];
+}
+
+- (void)setFileMaxCount:(NSInteger)fileMaxCount {
+    [[XTILoger shared] setValue:@(fileMaxCount) forKey:@"fileMaxCount"];
+}
+
+- (NSInteger)fileMaxCount {
+    return [[[XTILoger shared] valueForKeyPath:@"fileMaxCount"] integerValue];
+}
+
 - (void)setSaveLevel:(XTILogerLevel)saveLevel {
     _saveLevel = saveLevel;
     [[XTILoger shared] setValue:@(saveLevel) forKey:@"saveLevel"];

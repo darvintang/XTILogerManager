@@ -22,7 +22,7 @@
 @interface XTILogerManager : NSObject
 
 /**
-将日志压缩输出
+将日志压缩输出，闭包结果是是否分享日志压缩文件，默认使用分享
  */
 - (void)showLogZipWithFormVC:(UIViewController *)VC complete:(BOOL (^)(NSString *path))complete;
 - (void)showLogZipWithLevel:(XTILogerLevel)level formVC:(UIViewController *)VC complete:(BOOL (^)(NSString *path))complete;
@@ -35,9 +35,13 @@
  */
 @property (nonatomic, assign) XTILogerLevel printLevel;
 /**
- 写入文件的最低日志等级，如果不需要保存就设置为off。如果在控制板上设置了该属性那么该属性再设置的就无效
+ 写入文件的最低日志等级，如果不需要保存就设置为off。默认是error
  */
 @property (nonatomic, assign) XTILogerLevel saveLevel;
+/// 单个日志文件大小，默认1024KB，KB为最小单位
+@property (nonatomic, assign) NSInteger fileMaxSize;
+/// 同一日志等级最大文件数量，默认5
+@property (nonatomic, assign) NSInteger fileMaxCount;
 
 + (instancetype)shared;
 
