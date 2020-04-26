@@ -12,7 +12,13 @@ void XTIUncaughtExceptionHandler(NSException *exception) {
     NSArray *arr = [exception callStackSymbols];
     NSString *reason = [exception reason];
     NSString *name = [exception name];
-    NSString *content = [NSString stringWithFormat:@"\n========异常错误报告========\nName:%@\nReason:\n%@\nCallStackSymbols:\n%@", name, reason, [arr componentsJoinedByString:@"\n"]];
+
+    NSDictionary *dict = [NSBundle mainBundle].infoDictionary;
+    NSString *appVersion = dict[@"CFBundleShortVersionString"];
+    NSString *model = [UIDevice currentDevice].model;
+    NSString *systemVersion = [UIDevice currentDevice].systemVersion;
+
+    NSString *content = [NSString stringWithFormat:@"\n========异常错误报告========\n应用版本：%@, 设备型号：%@, 系统版本：%@\nName:%@\nReason:\n%@\nCallStackSymbols:\n%@", appVersion, model, systemVersion, name, reason, [arr componentsJoinedByString:@"\n"]];
     XTILoger_Crash(@"%@", content);
 }
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XTILogerManager"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "一个OC的用于打印、保存日志的组件"
   s.description  = <<-DESC
   TODO:可以将日志文件压缩后通过系统的共享发送出去
